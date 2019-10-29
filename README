@@ -1,0 +1,29 @@
+Serban Andra, 311CA
+Struct Info:
+- In aceasta structura am retinut id-ul, timpul, ordinea din clasament si ordinea din calasamentul anterior.
+- La citirea fiecarei curse am retinut initial informatiile intr-un vector de tip Info;
+- Pentru a putea avea acesta informatie stocata in Skip-list am supraincarcat anumiti operatori si astfel informatia a fost sortata dupa timp, dar am putut efectua si cautari dupa id.
+
+Struct Node: 
+- strctura necesara pentru SkipList
+- membri next, prev, up, down pentru deplasare in cele 4 directii
+
+Implementare Skip List:
+- Pentru implemetarea structurii SkipList am construit metodele:
+	+ create_new_level
+	+ print_skip_list
+	+ search_elem
+	+ find_elem
+	+ coin_flip
+	+ find_left_up (functie ce imi va fi necesara pentru inserarea pe nivelul de sus)
+	+ put (functie in care stabilesc legaturile intre pointeri)
+	+ insert
+	+ empty_level (metoda pentru verificarea existentei unui nivel gol, rezultat in urma stergerii informatiei din Skip_list)
+	+ remove_level(metoda pentru stergerea nivelului gol)
+	+ get_pozition (metoda returneaza pozitia pe care o ocupa o informatie in lista, in acest caz pozitia in functie de punctaj)
+	+ remove_elem
+
+Logica problemei:
+* am citit pe rand timpii jucatorilor, verificand daca este prima cursa caz in care inserez informatiile in list_of_players (ordonati in functie de timp), iar in caz contrar stergand infromatia despre jucatorul respectiv si inserand-o pe cea noua;
+* dupa ce am citit toti timpii din cursa am stabilit ordinea jucatorilor, folosindu-ma de un alt vector(clasament) si am calculat noile punctaje(functia set_points) ;
+* in cazul unei comenzi de tip 'print' am afisat clasamentul folosint functia print_clasament
